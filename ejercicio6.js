@@ -12,18 +12,34 @@ const starWarsMovies = [
     { title: 'Solo', releaseYear: 2018 }
   ];
   
-  let Los70 = 0;
-  let Los80 = 0;
-  let Los90 = 0;
-  let Los00 = 0;
-  let Los10 = 0;
+  let Los70 = [];
+  let Los80 = [];
+  let Los90 = [];
+  let Los00 = [];
+  let Los10 = [];
 
-  
+  for (const film of starWarsMovies) {
+    if (film.releaseYear >= 1970 && film.releaseYear < 1980) {
+      Los70.push(film.title);
+    } else if (film.releaseYear >= 1980 && film.releaseYear < 1990) {
+      Los80.push(film.title);
+    } else if (film.releaseYear >= 1990 && film.releaseYear < 2000) {
+      Los90.push(film.title);
+    } else if (film.releaseYear >= 2000 && film.releaseYear < 2010) {
+      Los00.push(film.title);
+    } else if (film.releaseYear >= 2010 && film.releaseYear < 2020) {
+      Los10.push(film.title);
+    } else {
+      console.log ("No hay películas de Starwars para la década señalada")
+    }
+    }
 
+  const StarWarsTroughYears= {
+    Los70s: (Los70),
+    Los80s: (Los80),
+    Los90s: (Los90),
+    Los00s: (Los00),
+    Los10s: (Los10),
+  }
 
-
-/*
-Agrupa las películas de Star Wars por **década** de lanzamiento en un objeto donde las **claves** son las décadas y los **valores** son arrays de películas.
-
-Utiliza bucles para lograrlo e imprime el objeto final por consola.
-*/
+  console.log(StarWarsTroughYears);
