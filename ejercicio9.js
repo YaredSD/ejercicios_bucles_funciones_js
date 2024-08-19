@@ -10,38 +10,16 @@ const xMen = [
     { name: 'Professor X', year: 1963 },
     { name: 'Mystique', year: 1978 }
   ];
-  
 
   function findOldestXMen(xMen) {
-    let yearOldest = xMen[0].year;
-    for (const onexMen of xMen) {
-      if (onexMen.year < yearOldest) {
-        yearOldest = onexMen.year;
+    const sorted = xMen.sort((a,b) => a.year - b.year);
+    const OlderSuperhero = sorted[0].year;
+    for (const superhero of xMen) {
+      if (superhero.year < OlderSuperhero) {
+        OlderSuperhero = superhero.year;
       }
     }
-  
-    let xMenMasAntiguo = xMen.filter((onexMen) => onexMen.year === yearOldest);
-    return xMenMasAntiguo;
-  }
-  
-  console.log(findOldestXMen(xMen));
-  
-  /* 
-  function findOldestXMen(xMen) {
-    let OlderXMen = [];
-    const sorted = xMen.sort((a,b) => a.year - b.year);
-
-    if (Oldest === sorted[1].year) {
-      OlderXMen.push(sorted[1]);
-    } else {
-      OlderXMen.push (sorted[0])
-    }
+    let OlderXMen = xMen.filter((superhero) => superhero.year === OlderSuperhero);
     return OlderXMen;
   }
   console.log(findOldestXMen(xMen));
-
-/*
-Crea una **función** que reciba un array de objetos representando a varios miembros de los X-Men y su año de aparición. La función debe retornar el miembro más antiguo.
-
-Utiliza este array para probar tu función.
-*/

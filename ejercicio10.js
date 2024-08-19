@@ -12,13 +12,15 @@ const capitals = {
   };
   
   function getCapital(country) {
-    // insert code
+    if (capitals[country]) {
+      console.log("La capital de " + country + " es " + capitals[country]);
+    } else {
+      console.log("Este país no se encuentra en nuestra base de datos. Envíanos un email a desarrollowebfp@thepower.education con el país y su capital para incluirlo en nuestra lista.")
+      return;
   }
+}
 
-/*
-Desarrolla una función que reciba un país por parámetro y devuelva su capital.
+// Dejaremos dos ejemplos por consola, uno con un país de nuestra lisra y otro que no figura en la misma:
 
-Utiliza un objeto para almacenar los países y sus capitales.
-
-La función debe manejar casos en los que el país no esté en la lista, devolviendo un mensaje adecuado.
-*/
+console.log(getCapital("Spain"));
+console.log(getCapital("Australia"));
