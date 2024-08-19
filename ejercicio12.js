@@ -12,11 +12,15 @@ const mutants = [
   ];
   
   function findMutantByPower(mutants, power) {
-    // insert code
+    for (const mutant of mutants) {
+      if (power == mutant.power) {
+        console.log("Hemos encontrado un mutante con ese poder: " + mutant.name)
+      }
+    } 
+    if (power !== mutants.power) {
+      console.log("No hemos encontrado un mutante con ese poder")
+    }
   }
 
-/*
-Desarrolla una función que busque en un array de objetos representando mutantes si existe alguno con un poder específico y retorne un mensaje indicando si fue encontrado o no.
-
-Considera el caso de múltiples mutantes con el mismo poder.
-*/
+  console.log(findMutantByPower(mutants, 'magnetism'));
+  console.log(findMutantByPower(mutants, 'transformation'));

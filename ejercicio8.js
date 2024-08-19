@@ -6,6 +6,12 @@ const artists = [
     { name: 'John Lennon', influences: ['Elvis Presley', 'Chuck Berry', 'Buddy Holly'] }
   ];
 
-/*
-Dada una lista de artistas con sus influencias, utiliza bucles anidados para listar todos los artistas y sus influencias directas e imprime cada par por consola.
-*/
+  
+  for (let a = 0; a < artists.length; a++) {
+    const artist = artists[a];
+    const name = artist.name;
+    for (let b = 0; b < artist.influences.length; b++) {
+      const influence = artist.influences[b];
+      console.log(name + " fue influenciado por: " + influence);
+    }
+  }

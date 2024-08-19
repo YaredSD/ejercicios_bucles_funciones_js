@@ -12,22 +12,13 @@ const movies = [
   ];
   
   function averageMovieDuration(movies) {
-    for (const movie of movies) {
-      /*
-      let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 29 };
-
-let arr = [ john, pete, mary ];
-
-alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28*/
+    const TotalFilms = movies.length;
+    let TotalDuration = 0;
+  
+    for (const film of movies) {
+      TotalDuration += film.duration;
     }
+    const Average = TotalDuration / TotalFilms;
+    return Average;
   }
-
-/*
-Escribe una función que calcule el promedio de duración de una lista de películas.
-
-Recibe un array de películas, cada una con su duración en minutos.
-
-La función debe devolver el promedio de duración de todas las películas.
-*/
+  console.log(averageMovieDuration(movies));
