@@ -12,8 +12,16 @@ const actors = [
   ];
   
   function calculateActorsAges(actors) {
-    // insert code
+    const ActorsAge = [];
+    for (const actor of actors) {
+      ActorsAge.push(actor.name)
+      let ActualAge = 2024 - actor.born;
+      ActorsAge.push(ActualAge);
+    }
+    return ActorsAge;
   }
+
+  console.log(calculateActorsAges(actors))
 
 /*
 Crea una función que, dada una lista de actores con su año de nacimiento, calcule su edad actual y retorne un nuevo array con los nombres de los actores y sus edades.
